@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lojacamisas</title>
+    <title>Loja de Camisetas</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="container inicio">
+
+
+    <%= nav_bar brand:"MinhaLoja", brand_link:"root_url", fixed: :top  %>
     <%= yield %>
+    </div>
   </body>
 </html>
