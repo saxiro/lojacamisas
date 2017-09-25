@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formúlário</title>
+  </head>
+  <body>
+    <%= form_for Produto.new do |f| %>
+      Nome
+      <%= f.text_field :nome %>
+      <br>
+      Descrição
+      <%= f.text_area :descricao %>
+      <br>
+      quantidade
+      <%= f.number_field :quantidade %>
+      <br>
+      Preço
+      <%= f.number_field :preco %>
+      <br>
+      <%= f.submit %>
+    <% end %>
+  </body>
+</html>
