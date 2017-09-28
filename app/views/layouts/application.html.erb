@@ -11,7 +11,14 @@
     <div class="container inicio">
 
 
-    <%= nav_bar brand:"MinhaLoja", brand_link:"root_url", fixed: :top  %>
+    <%= nav_bar brand:"MinhaLoja", brand_link:"#{root_url}", fixed: :top do  %>
+      <% form_tag busca_produto_path, method: :get, class: "navbar-form navbar-right" do %>
+        <div class="form-group">
+          <%= text_field_tag :nome, @nomeABuscar, class:"form-control" %>
+          <%= button_to "Buscar", nil, class:"form-control btn btn-default" %>
+        </div>
+      <% end %>
+    <% end %>
     <%= yield %>
     </div>
   </body>

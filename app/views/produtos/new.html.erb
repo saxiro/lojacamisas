@@ -27,7 +27,7 @@
     <%= f.label :quantidade %>
     <%= f.number_field :quantidade, step:1, class:"form-control"  %>&nbsp;&nbsp;&nbsp;
     <%= f.label :preco %>
-    <%= f.number_field :preco, class:"form-control" %>
+    <%= f.number_field :preco, step:0.01, class:"form-control" %>
   </div>
 
    <%= f.submit "Criar o Produto", class:"btn btn-primary" %>
