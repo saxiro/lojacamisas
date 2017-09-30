@@ -3,6 +3,7 @@ class ProdutosController < ApplicationController
 
   def new
     @produto = Produto.new
+    @departamentos = Departamento.all
   end
 
   def index
@@ -17,7 +18,7 @@ class ProdutosController < ApplicationController
   end
 
   def create
-    valores = params.require(:produto).permit :nome, :descricao, :quantidade, :preco # Pega o params faz uma requisição do produtos e permite todos
+    valores = params.require(:produto).permit :nome, :descricao, :quantidade, :preco, :departamento_id # Pega o params faz uma requisição do produtos e permite todos
     @produto = Produto.new valores
     respond_to do |format|
       if @produto.save
