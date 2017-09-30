@@ -21,6 +21,7 @@ class ProdutosController < ApplicationController
     @produto = Produto.new valores
     respond_to do |format|
       if @produto.save
+        flash[:notice] = "Camisa cadastrada com sucesso!"
         format.html { redirect_to root_url }
       else
       format.html { render :new }

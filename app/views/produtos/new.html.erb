@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Formúlário</title>
-  </head>
-  <body>
-    <div class="container">
-
       <%- @produto.errors.full_messages.each do |error| %>
+      <div class="alert alert-danger" role="alert">
         <%= error %>
+      </div>
+
       <%end %>
 <h1>Formulário</h1>
 
