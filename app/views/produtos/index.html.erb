@@ -5,7 +5,6 @@
 <%end%>
 
 <h1>Tabela de Roupas</h1>
-<h2>teste feito</h2>
 
     <table class="table table-bordered">
       <thead>
@@ -14,20 +13,12 @@
           <th>Nome</th>
           <th>Descrição</th>
           <th>Preço</th>
-          <th>Quantidade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @produtosPorNome.each do |produto| %>
 
-        <tr>
-          <td><%= produto.id %></td>
-          <td><%= produto.nome %></td>
-          <td><%= produto.descricao %></td>
-          <td><%= produto.preco %></td>
-          <td><%= produto.quantidade %></td>
+          <th>Ação</th>
         </tr>
-        <% end %>
+        </thead>
+      <tbody>
+        <%= render @produtosPorNome %>
       </tbody>
 
 
@@ -41,22 +32,13 @@
           <th>Nome</th>
           <th>Descrição</th>
           <th>Preço</th>
-          <th>Quantidade</th>
+
+          <th>Ação</th>
         </tr>
         </thead>
         <tbody>
-
-        <% @produtosPorPreco.each do |produto| %>
-
-        <tr>
-          <td><%= produto.id %></td>
-          <td><%= produto.nome %></td>
-          <td><%= produto.descricao %></td>
-          <td><%= produto.preco %></td>
-          <td><%= produto.quantidade %></td>
-        </tr>
-        <% end %>
-      </tbody>
+          <%= render @produtosPorPreco %>
+        </tbody>
 
 
     </table>
@@ -68,29 +50,13 @@
           <th>Nome</th>
           <th>Descrição</th>
           <th>Preço</th>
-          <th>Quantidade</th>
+
           <th>Ação</th>
         </tr>
         </thead>
         <tbody>
-
-        <% @produtosTodos.each do |p| %>
-
-        <tr>
-          <td><%= p.id %></td>
-          <td><%= p.nome %></td>
-          <td><%= p.descricao %></td>
-          <td><%= p.preco %></td>
-          <td><%= p.quantidade %></td>
-          <td>
-            <%= button_to "Remover", p,
-                          method: :delete,
-                          class:"btn btn-danger",
-                            data: { confirm: "tem certeza que deseja remover: #{p.nome} ??"} %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
+            <%= render @produtosTodos %>
+        </tbody>
 
 
     </table>
