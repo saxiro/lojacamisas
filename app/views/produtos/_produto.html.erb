@@ -8,6 +8,9 @@
     <%= button_to "Remover", produto,
                   method: :delete,
                   class:"btn btn-danger",
-                    data: { confirm: "tem certeza que deseja remover: #{produto.nome} ??"} %>
+                    data: { confirm: "tem certeza que deseja remover: #{produto.nome} ??"} %>&nbsp;&nbsp;&nbsp;
+
   </td>
+  <td><%= link_to "Alterar", edit_produto_path(produto), class: "btn btn-default"
+   %></td>
 </tr>

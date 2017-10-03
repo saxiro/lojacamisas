@@ -12,6 +12,12 @@ class ProdutosController < ApplicationController
     @produtosTodos = Produto.order(:id)
     @liv = Livro.order :titulo
   end
+  def edit
+    id = params[:id]
+    @produto = Produto.find(id)
+    @departamentos = Departamento.all
+    render :new
+  end
   def busca
     @nomeABuscar = params[:nome]
     @produtos = Produto.where "nome like ?", "%#{@nomeABuscar}%"
